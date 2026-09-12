@@ -1,1 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FocusBill — Focus &amp; Self-Reward</title>
+    <meta name="description" content="FocusBill turns focused work into self-defined rewards. Earn coins from focus sessions, redeem custom rewards, and export Focus Bills that make every effort visible.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Microsoft YaHei", sans-serif;
+            background: #f9fafb;
+            color: #1f2937;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        /* Language switch */
+        .lang-switch {
+            text-align: right;
+            margin-bottom: 20px;
+        }
+        .lang-switch button {
+            background: #ffffff;
+            border: 1px solid #d1d5db;
+            color: #374151;
+            padding: 6px 16px;
+            border-radius: 999px;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            margin-left: 8px;
+            transition: all 0.2s;
+        }
+        .lang-switch button:hover {
+            background: #f3f4f6;
+        }
+        .lang-switch button.active {
+            background: #111827;
+            border-color: #111827;
+            color: #ffffff;
+        }
+        /* Hero */
+        .hero {
+            text-align: center;
+            padding: 56px 24px;
+            background: linear-gradient(145deg, #f3f4f6 0%, #e5e7eb 100%);
+            border-radius: 24px;
+            margin-bottom: 40px;
+        }
+        .hero h1 {
+            font-size: 48px;
+            font-weight: 800;
+            color: #1f2937;
+            letter-spacing: -0.02em;
+        }
+        .hero .slogan {
+            font-size: 20px;
+            color: #4b5563;
+            margin-top: 12px;
+            font-weight: 500;
+        }
+        .hero .desc {
+            max-width: 560px;
+            margin: 16px auto 0;
+            font-size: 16px;
+            color: #6b7280;
+        }
+        .cta-row {
+            margin-top: 28px;
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            border-radius: 999px;
+            font-size: 15px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+        .btn-primary {
+            background: #111827;
+            color: #ffffff;
+        }
+        .btn-primary:hover {
+            background: #000000;
+        }
+        .btn-secondary {
+            background: #ffffff;
+            color: #111827;
+            border: 1px solid #d1d5db;
+        }
+        .btn-secondary:hover {
+            background: #f3f4f6;
+        }
+        /* Sections */
+        .section {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 32px;
+            margin-bottom: 24px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+        }
+        .section h2 {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            color: #111827;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .section h2::before {
+            content: "";
+            display: inline-block;
+            width: 4px;
+            height: 24px;
+            background: #9ca3af;
+            border-radius: 4px;
+        }
+        .section p {
+            color: #374151;
+            margin-bottom: 12px;
+        }
+        /* Feature grid */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 16px;
+            margin-top: 8px;
+        }
+        .feature-card {
+            background: #f9fafb;
+            border-radius: 12px;
+            padding: 20px;
+        }
+        .feature-card h3 {
+            font-size: 16px;
+            font-weight: 600;
+            color: #111827;
+            margin-bottom: 6px;
+        }
+        .feature-card p {
+            font-size: 14px;
+            color: #6b7280;
+            margin-bottom: 0;
+        }
+        /* Steps */
+        .steps {
+            margin-top: 8px;
+            counter-reset: step;
+        }
+        .step {
+            display: flex;
+            gap: 16px;
+            padding: 14px 0;
+            border-bottom: 1px solid #f3f4f6;
+        }
+        .step:last-child {
+            border-bottom: none;
+        }
+        .step-num {
+            flex-shrink: 0;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: #e5e7eb;
+            color: #1f2937;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+        }
+        .step-content h4 {
+            font-size: 16px;
+            font-weight: 600;
+            color: #1f2937;
+        }
+        .step-content p {
+            font-size: 14px;
+            color: #6b7280;
+            margin-top: 2px;
+            margin-bottom: 0;
+        }
+        /* Screenshot placeholder */
+        .shot-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 16px;
+            margin-top: 8px;
+        }
+        .shot {
+            background: #f3f4f6;
+            border-radius: 16px;
+            aspect-ratio: 9 / 16;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #9ca3af;
+            font-size: 14px;
+            text-align: center;
+            padding: 16px;
+            overflow: hidden;
+        }
+        .shot img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 12px;
+        }
+        /* Notify box */
+        .notify-box {
+            background: #f3f4f6;
+            border-radius: 12px;
+            padding: 24px;
+            text-align: center;
+        }
+        .notify-box p {
+            font-size: 14px;
+            color: #6b7280;
+            margin-bottom: 16px;
+        }
+        .notify-form {
+            display: flex;
+            gap: 10px;
+            max-width: 420px;
+            margin: 0 auto;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .notify-form input {
+            flex: 1;
+            min-width: 200px;
+            padding: 12px 16px;
+            border: 1px solid #d1d5db;
+            border-radius: 999px;
+            font-size: 15px;
+            outline: none;
+        }
+        .notify-form input:focus {
+            border-color: #9ca3af;
+        }
+        .notify-form button {
+            padding: 12px 22px;
+            border: none;
+            border-radius: 999px;
+            background: #111827;
+            color: #fff;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+        .notify-form button:hover {
+            background: #000;
+        }
+        /* Footer */
+        .footer {
+            text-align: center;
+            font-size: 13px;
+            color: #9ca3af;
+            margin-top: 40px;
+            padding-bottom: 20px;
+        }
+        .footer a {
+            color: #6b7280;
+            text-decoration: none;
+            margin: 0 8px;
+        }
+        .footer a:hover {
+            color: #111827;
+            text-decoration: underline;
+        }
+        .footer .links {
+            margin-bottom: 10px;
+        }
+        #content-zh {
+            display: none;
+        }
+        @media (max-width: 640px) {
+            .hero h1 {
+                font-size: 34px;
+            }
+            .hero .slogan {
+                font-size: 17px;
+            }
+            .section {
+                padding: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Language Switch -->
+        <div class="lang-switch">
+            <button id="btn-zh" onclick="setLanguage('zh')" type="button">中文</button>
+            <button id="btn-en" class="active" onclick="setLanguage('en')" type="button">English</button>
+        </div>
 
+        <!-- ========== English ========== -->
+        <div id="content-en">
+            <div class="hero">
+                <h1>FocusBill</h1>
+                <div class="slogan">Focus &amp; Self-Reward</div>
+                <p class="desc">
+                    Turn focused work into self-defined rewards. Earn coins from every focus session, redeem what you set in the Life Store, and export Focus Bills that make every effort visible.
+                </p>
+                <div class="cta-row">
+                    <a class="btn btn-primary" href="#notify">Get Launch Notify</a>
+                    <a class="btn btn-secondary" href="/support">Help &amp; Support</a>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Why FocusBill</h2>
+                <p>
+                    Traditional timers and to-do lists track what you do — but rarely reward you for doing it.
+                    FocusBill pairs focused work with a personal reward system, so consistency feels tangible.
+                </p>
+                <div class="features">
+                    <div class="feature-card">
+                        <h3>Focus → Coins</h3>
+                        <p>Complete focus sessions on your tasks and earn coins for every stretch of deep work.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>Life Store</h3>
+                        <p>Create your own rewards — coffee, a meal, free time — and set the coin price yourself.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>Focus Bills</h3>
+                        <p>Export clean bill-style images of your focus time and reward spending to review or share.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>Projects &amp; Tasks</h3>
+                        <p>Break long-term goals into projects and tasks, then focus with clear purpose.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>How it works</h2>
+                <div class="steps">
+                    <div class="step">
+                        <div class="step-num">1</div>
+                        <div class="step-content">
+                            <h4>Create Projects and Tasks</h4>
+                            <p>Break goals into projects, then add concrete tasks so every focus session has a target.</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-num">2</div>
+                        <div class="step-content">
+                            <h4>Start a Focus Session</h4>
+                            <p>Pick a task, start the timer, and earn coins when you complete the session.</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-num">3</div>
+                        <div class="step-content">
+                            <h4>Redeem in Life Store</h4>
+                            <p>Define custom rewards and prices, then spend coins on the rewards you set for yourself.</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-num">4</div>
+                        <div class="step-content">
+                            <h4>Download Focus Bills</h4>
+                            <p>Review focus time and reward spending as bill-style images you can save to Photos.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Screenshots</h2>
+                <p style="font-size:14px;color:#6b7280;margin-bottom:12px;">
+                    Replace the placeholders below with your real app screenshots (put images in an <code>images/</code> folder).
+                </p>
+                <div class="shot-grid">
+                    <div class="shot">
+                        <!-- <img src="images/focus.png" alt="Focus"> -->
+                        Focus Timer
+                    </div>
+                    <div class="shot">
+                        <!-- <img src="images/store.png" alt="Life Store"> -->
+                        Life Store
+                    </div>
+                    <div class="shot">
+                        <!-- <img src="images/bill.png" alt="Focus Bill"> -->
+                        Focus Bill
+                    </div>
+                    <div class="shot">
+                        <!-- <img src="images/tasks.png" alt="Projects & Tasks"> -->
+                        Projects &amp; Tasks
+                    </div>
+                </div>
+            </div>
+
+            <div class="section" id="notify">
+                <h2>Coming Soon</h2>
+                <div class="notify-box">
+                    <p>FocusBill is under App Review. Leave your email and we’ll notify you when it’s live on the App Store.</p>
+                    <!--
+                      Replace action with your Formspree / Basin endpoint when ready.
+                      Example: action="https://formspree.io/f/xxxxxx" method="POST"
+                    -->
+                    <form class="notify-form" action="#" method="POST" onsubmit="alert('Please connect a form endpoint (e.g. Formspree) before launch.'); return false;">
+                        <input type="email" name="email" placeholder="you@example.com" required>
+                        <button type="submit">Notify me</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="footer">
+                <div class="links">
+                    <a href="/support">Help &amp; Support</a>
+                    <a href="/privacy-policy">Privacy Policy</a>
+                </div>
+                © 2026 FocusBill · Focus &amp; Self-Reward
+            </div>
+        </div>
+
+        <!-- ========== Chinese ========== -->
+        <div id="content-zh">
+            <div class="hero">
+                <h1>FocusBill</h1>
+                <div class="slogan">专注与自我奖励</div>
+                <p class="desc">
+                    把专注变成可兑换的奖励。通过专注赚取金币，在「人生商店」自定义并兑换奖励，用专注账单让每一份努力都看得见。
+                </p>
+                <div class="cta-row">
+                    <a class="btn btn-primary" href="#notify-zh">上架后通知我</a>
+                    <a class="btn btn-secondary" href="/support">帮助与支持</a>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>为什么选择 FocusBill</h2>
+                <p>
+                    传统计时器和待办列表能记录你做了什么，却很少为「做到了」提供即时反馈。
+                    FocusBill 将专注与自我奖励结合，让坚持变得可感知、有回报。
+                </p>
+                <div class="features">
+                    <div class="feature-card">
+                        <h3>专注赚金币</h3>
+                        <p>围绕任务完成专注时段，每次专注都能积累金币。</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>人生商店</h3>
+                        <p>自定义奖励内容与价格——一杯咖啡、一顿饭、休息时间，由你决定。</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>专注账单</h3>
+                        <p>将专注时长与奖励支出导出为账单图片，方便回顾与留存。</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>项目与任务</h3>
+                        <p>把长期目标拆成项目和任务，让每次专注都有清晰方向。</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>使用方式</h2>
+                <div class="steps">
+                    <div class="step">
+                        <div class="step-num">1</div>
+                        <div class="step-content">
+                            <h4>创建项目与任务</h4>
+                            <p>将目标拆分为项目，再添加具体任务，为专注设定明确对象。</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-num">2</div>
+                        <div class="step-content">
+                            <h4>开始专注计时</h4>
+                            <p>选择任务并开始专注，完成后获得对应金币。</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-num">3</div>
+                        <div class="step-content">
+                            <h4>在人生商店兑换</h4>
+                            <p>自定义奖励与价格，用金币兑换你为自己设定的奖励。</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-num">4</div>
+                        <div class="step-content">
+                            <h4>下载专注账单</h4>
+                            <p>回顾专注与消费记录，导出账单图片保存到相册。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>应用截图</h2>
+                <p style="font-size:14px;color:#6b7280;margin-bottom:12px;">
+                    请将下方占位替换为真实截图（图片放在 <code>images/</code> 目录）。
+                </p>
+                <div class="shot-grid">
+                    <div class="shot">专注计时</div>
+                    <div class="shot">人生商店</div>
+                    <div class="shot">专注账单</div>
+                    <div class="shot">项目与任务</div>
+                </div>
+            </div>
+
+            <div class="section" id="notify-zh">
+                <h2>即将上线</h2>
+                <div class="notify-box">
+                    <p>FocusBill 正在 App 审核中。留下邮箱，上架后我们会第一时间通知你。</p>
+                    <form class="notify-form" action="#" method="POST" onsubmit="alert('上线前请先接入表单服务（如 Formspree）。'); return false;">
+                        <input type="email" name="email" placeholder="你的邮箱" required>
+                        <button type="submit">通知我</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="footer">
+                <div class="links">
+                    <a href="/support">帮助与支持</a>
+                    <a href="/privacy-policy">隐私政策</a>
+                </div>
+                © 2026 FocusBill · 专注与自我奖励
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function setLanguage(lang) {
+            var contentEn = document.getElementById('content-en');
+            var contentZh = document.getElementById('content-zh');
+            var btnEn = document.getElementById('btn-en');
+            var btnZh = document.getElementById('btn-zh');
+            if (lang === 'zh') {
+                contentEn.style.display = 'none';
+                contentZh.style.display = 'block';
+                btnEn.classList.remove('active');
+                btnZh.classList.add('active');
+                document.documentElement.lang = 'zh-CN';
+                document.title = 'FocusBill — 专注与自我奖励';
+            } else {
+                contentEn.style.display = 'block';
+                contentZh.style.display = 'none';
+                btnZh.classList.remove('active');
+                btnEn.classList.add('active');
+                document.documentElement.lang = 'en';
+                document.title = 'FocusBill — Focus & Self-Reward';
+            }
+        }
+    </script>
+</body>
+</html>
