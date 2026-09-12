@@ -1,1 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FocusBill — Privacy Policy</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Microsoft YaHei", sans-serif;
+            background: #f9fafb;
+            color: #1f2937;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* Language switch */
+        .lang-switch {
+            text-align: right;
+            margin-bottom: 20px;
+        }
+
+        .lang-switch button {
+            background: #ffffff;
+            border: 1px solid #d1d5db;
+            color: #374151;
+            padding: 6px 16px;
+            border-radius: 999px;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            margin-left: 8px;
+            transition: all 0.2s;
+        }
+
+        .lang-switch button:hover {
+            background: #f3f4f6;
+        }
+
+        .lang-switch button.active {
+            background: #111827;
+            border-color: #111827;
+            color: #ffffff;
+        }
+
+        /* Hero */
+        .hero {
+            text-align: center;
+            padding: 40px 20px;
+            background: linear-gradient(145deg, #f3f4f6 0%, #e5e7eb 100%);
+            border-radius: 24px;
+            margin-bottom: 40px;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            font-weight: 800;
+            color: #1f2937;
+            letter-spacing: -0.02em;
+        }
+
+        .hero .slogan {
+            font-size: 18px;
+            color: #4b5563;
+            margin-top: 12px;
+            font-weight: 500;
+        }
+
+        /* Sections */
+        .section {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 32px;
+            margin-bottom: 24px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+        }
+
+        .section h2 {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            color: #111827;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .section h2::before {
+            content: "";
+            display: inline-block;
+            width: 4px;
+            height: 24px;
+            background: #9ca3af;
+            border-radius: 4px;
+        }
+
+        .section p {
+            color: #374151;
+            margin-bottom: 12px;
+        }
+
+        .section .meta {
+            color: #6b7280;
+            font-size: 14px;
+        }
+
+        /* Sub-headings */
+        .section h3 {
+            font-size: 18px;
+            font-weight: 600;
+            color: #111827;
+            margin-top: 20px;
+            margin-bottom: 8px;
+        }
+
+        /* Lists */
+        .section ul {
+            margin: 12px 0 12px 24px;
+            color: #374151;
+        }
+
+        .section ul li {
+            margin-bottom: 8px;
+        }
+
+        /* Links */
+        .section a {
+            color: #0070c9;
+            text-decoration: none;
+        }
+
+        .section a:hover {
+            text-decoration: underline;
+        }
+
+        /* GDPR callout — same visual language as contact-box */
+        .gdpr-box {
+            background: #f3f4f6;
+            border-radius: 12px;
+            padding: 24px;
+            margin-top: 16px;
+        }
+
+        .gdpr-box p {
+            font-size: 14px;
+        }
+
+        .gdpr-box ul {
+            font-size: 14px;
+        }
+
+        .gdpr-box p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Contact */
+        .contact-box {
+            background: #f3f4f6;
+            border-radius: 12px;
+            padding: 24px;
+            text-align: center;
+        }
+
+        .contact-box .email {
+            font-size: 20px;
+            font-weight: 600;
+            color: #111827;
+            text-decoration: none;
+        }
+
+        .contact-box .email:hover {
+            text-decoration: underline;
+        }
+
+        .contact-box p {
+            font-size: 14px;
+            color: #6b7280;
+            margin-top: 8px;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            font-size: 13px;
+            color: #9ca3af;
+            margin-top: 40px;
+        }
+
+        #content-zh {
+            display: none;
+        }
+
+        /* Responsive */
+        @media (max-width: 640px) {
+            .hero h1 {
+                font-size: 34px;
+            }
+            .section {
+                padding: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+
+        <!-- Language Switch -->
+        <div class="lang-switch">
+            <button id="btn-zh" onclick="setLanguage('zh')" type="button">中文</button>
+            <button id="btn-en" class="active" onclick="setLanguage('en')" type="button">English</button>
+        </div>
+
+        <!-- ========== English Version (Default) ========== -->
+        <div id="content-en">
+
+            <div class="hero">
+                <h1>FocusBill</h1>
+                <div class="slogan">Privacy Policy</div>
+            </div>
+
+            <div class="section">
+                <p class="meta">Last updated: September 2, 2026</p>
+                <p>This Privacy Policy explains how FocusBill collects, stores, and protects your personal information. We take your privacy seriously and are committed to handling your data transparently and securely.</p>
+            </div>
+
+            <div class="section">
+                <h2>Data We Collect</h2>
+
+                <h3>Information You Provide</h3>
+                <p>When you contact us by email, we collect your email address and any other personal information you choose to include in your message. This information is used only to respond to your inquiry, process your request, or provide technical support, and is deleted within a reasonable period after your inquiry has been resolved.</p>
+
+                <h3>Purchase Information</h3>
+                <p>When you purchase a membership or other service within the App Store, Apple provides us with basic purchase information, such as purchase status, purchase date, and country/region. We never receive your payment details or card numbers — payments and refunds are handled entirely by Apple.</p>
+
+                <h3>Automatically Collected Data</h3>
+                <ul>
+                    <li><strong>Local storage data:</strong> Your projects, tasks, focus records, coins, and settings are core data stored only on your device. We have no way to access, read, or obtain this data.</li>
+                    <li><strong>iCloud sync data:</strong> If you enable iCloud sync, the data above is securely stored in your personal iCloud account and automatically synced to your other devices signed in with the same Apple ID. This process is managed and encrypted by Apple, and we cannot read or access this cloud data.</li>
+                </ul>
+
+                <h3>Services We Don't Use</h3>
+                <ul>
+                    <li>We do not use any third-party analytics tools or statistics SDKs.</li>
+                    <li>We do not use push notification services.</li>
+                </ul>
+
+                <h3>Information We Don't Collect</h3>
+                <ul>
+                    <li>Device identifiers, IP addresses, advertising identifiers, or location data.</li>
+                    <li>We do not display any advertising, and we never sell your personal data to any advertising platform or third party.</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>Permissions We Use</h2>
+
+                <h3>Photo Library (Add-Only)</h3>
+                <p>FocusBill requests permission to add photos to your device's photo library solely for the purpose of saving images you choose to export or download within the app (focus bill records). The app does not read, browse, or access any existing photos already stored in your photo library. This permission is used only when you explicitly choose to save an image, and no photo data is collected, transmitted, or shared with us or any third party.</p>
+
+                <h3>Photo Selection for Avatar and Item Images</h3>
+                <p>When you set a profile avatar or add an image for a market item, FocusBill uses the system's built-in photo picker to let you choose an image. This picker runs independently of the app — FocusBill only receives the specific photo you select and has no access to the rest of your photo library. No photo library permission is required or requested for this feature, and no image data is transmitted to us or any third party; selected images are stored only on your device (or, where applicable, synced via your personal iCloud account).</p>
+            </div>
+
+            <div class="section">
+                <h2>Third-Party Services</h2>
+                <p>We only use the following services, each of which maintains industry-standard security protections:</p>
+                <ul>
+                    <li>
+                        <strong>Apple App Store</strong>: used for app downloads and purchases.
+                        See the <a href="https://www.apple.com/privacy/" target="_blank" rel="noopener">Apple Privacy Policy</a>.
+                    </li>
+                    <li>
+                        <strong>iCloud</strong>: used for data sync and backup.
+                        See the <a href="https://www.apple.com/privacy/" target="_blank" rel="noopener">Apple Privacy Policy</a>.
+                    </li>
+                    <li>
+                        <strong>GitHub Pages</strong>: used to host this privacy policy and support page.
+                        See the <a href="https://docs.github.com/en/github/site-policy/github-privacy-statement" target="_blank" rel="noopener">GitHub Privacy Statement</a>.
+                    </li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>Data Storage &amp; Security</h2>
+                <ul>
+                    <li><strong>Local storage:</strong> All core data is stored only on your device. We do not operate any server that centrally stores your personal data.</li>
+                    <li><strong>iCloud sync:</strong> If you enable iCloud sync, your data is encrypted and stored in your personal iCloud account, managed by Apple. We cannot access it directly.</li>
+                    <li><strong>Email communication:</strong> Correspondence between you and us is securely retained in our mailbox system and is accessible only to our internal support team.</li>
+                    <li><strong>Security recommendation:</strong> We recommend enabling two-factor authentication for your Apple ID to further protect your iCloud data.</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>Your Rights</h2>
+                <p>
+                    Because FocusBill is designed around <strong>local storage + sync through your own iCloud account</strong>,
+                    you have direct control over your own data. You can exercise the following rights yourself, through the app or your device settings:
+                </p>
+                <ul>
+                    <li><strong>Access and view:</strong> You can view all your data within the app at any time, with no need to request it from us.</li>
+                    <li><strong>Correction:</strong> You can directly edit or update your information within the app.</li>
+                    <li><strong>Deletion:</strong> You can delete any data within the app, or permanently remove it by uninstalling the app or turning off iCloud sync.</li>
+                    <li><strong>Restriction of processing:</strong> You can limit how your data is processed by turning off iCloud sync or disabling backups.</li>
+                    <li><strong>Data portability:</strong> If you need a structured, machine-readable copy of your data, you can use the app's export feature (if available), or generate one yourself via your device's backup feature.</li>
+                    <li><strong>Withdrawal of consent:</strong> For features that require your authorization (such as iCloud sync), you can withdraw that authorization at any time in the app or system settings.</li>
+                </ul>
+                <p>
+                    Additionally, if you contact us by email, the contact details and correspondence we receive from you are retained by us as the data controller.
+                    For this data, you also have the right to <strong>access, correct, delete, restrict processing, port, and withdraw consent</strong>.
+                    You can exercise these rights by contacting <a href="mailto:contact@focusbill.app">contact@focusbill.app</a>, and we will respond within 30 days.
+                </p>
+
+                <h3>Additional Rights for EU / EEA Users (GDPR)</h3>
+                <div class="gdpr-box">
+                    <p>If you are located in the European Union or European Economic Area, the General Data Protection Regulation (GDPR) grants you additional rights regarding your personal data, including the right to lodge a complaint with your local data protection authority. Since FocusBill stores your core app data only on your device and, optionally, in your own iCloud account, the personal data we as a company actually hold is limited to what you send us by email. For that data:</p>
+                    <ul>
+                        <li><strong>Legal basis for processing:</strong> We process the email and information you send us based on your consent and our legitimate interest in responding to your inquiry.</li>
+                        <li><strong>Right to lodge a complaint:</strong> You may lodge a complaint with the data protection authority in your country of residence if you believe your data has been processed unlawfully.</li>
+                        <li><strong>Data retention:</strong> We retain email correspondence only for as long as needed to resolve your inquiry, after which it is deleted within a reasonable period.</li>
+                        <li><strong>No automated decision-making:</strong> We do not use your data for automated decision-making or profiling.</li>
+                        <li><strong>International transfers:</strong> Our email service provider may process data outside the EU/EEA; where this occurs, it is done under appropriate safeguards required by applicable law.</li>
+                    </ul>
+                    <p>To exercise any of these rights, contact us at <a href="mailto:contact@focusbill.app">contact@focusbill.app</a>.</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Contact Us</h2>
+                <div class="contact-box">
+                    <p>Feel free to contact us:</p>
+                    <a class="email" href="mailto:contact@focusbill.app">contact@focusbill.app</a>
+                    <p>We usually reply within 1–2 business days.</p>
+                </div>
+            </div>
+
+            <div class="footer">
+                © 2026 FocusBill · Focus &amp; Self-Reward
+            </div>
+        </div>
+
+        <!-- ========== Chinese Version ========== -->
+        <div id="content-zh">
+
+            <div class="hero">
+                <h1>FocusBill</h1>
+                <div class="slogan">隐私政策</div>
+            </div>
+
+            <div class="section">
+                <p class="meta">最后更新：2026年9月2日</p>
+                <p>本隐私政策旨在说明 FocusBill 如何收集、存储和保护您的个人信息。我们对您的隐私高度重视，并承诺以透明、安全的方式处理您的数据。</p>
+            </div>
+
+            <div class="section">
+                <h2>数据收集</h2>
+
+                <h3>您主动提供的信息</h3>
+                <p>当您通过邮件联系我们时，我们会收集您的邮箱地址，以及邮件内容中您主动提供的其他个人信息。这些信息仅用于回复您的咨询、处理您的请求或提供技术支持，我们会在处理完成后的合理期限内删除相关记录。</p>
+
+                <h3>购买信息</h3>
+                <p>当您在 App Store 内购买会员或其他服务时，Apple 会向我们提供基本的购买信息，例如购买状态、购买时间和购买国家/地区。我们不会获取您的任何付款或卡号信息，支付与退款流程完全由 Apple 处理。</p>
+
+                <h3>自动收集的数据</h3>
+                <ul>
+                    <li><strong>本地存储数据：</strong>您的项目、任务、专注记录、金币和设置等核心数据仅保存在您的设备本地，我们没有任何途径访问、读取或获取这些数据。</li>
+                    <li><strong>iCloud 同步数据：</strong>当您开启 iCloud 同步后，上述数据会安全地存储在您的个人 iCloud 账户中，并自动同步至您登录同一 Apple ID 的其他设备。同步过程由 Apple 管理和加密，我们无法读取或访问这些云端数据。</li>
+                </ul>
+
+                <h3>我们不使用的服务</h3>
+                <ul>
+                    <li>我们不会使用任何第三方分析工具或统计 SDK。</li>
+                    <li>我们不会使用推送通知服务。</li>
+                </ul>
+
+                <h3>我们不收集的信息</h3>
+                <ul>
+                    <li>设备标识符、IP 地址、广告标识符或位置信息。</li>
+                    <li>我们不展示任何广告，也绝不会向任何广告平台或第三方出售您的个人数据。</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>我们使用的权限</h2>
+
+                <h3>相册访问权限（仅限写入）</h3>
+                <p>FocusBill 会请求访问你设备相册的权限，仅用于将你在应用内主动选择导出或下载的图片（专注账单记录）保存至相册。本应用不会读取、浏览或访问你相册中已存储的任何照片。该权限仅在你明确点击保存图片时被使用，我们不会收集、传输或与任何第三方共享任何照片数据。</p>
+
+                <h3>头像与商品图片的照片选择</h3>
+                <p>当你设置个人头像或为商品添加图片时，FocusBill 使用系统内置的照片选择器供你挑选图片。该选择器独立于本应用运行——FocusBill 仅能获取你选中的那张照片，无法访问相册中的其他内容。此功能不需要、也不会请求相册访问权限，选中的图片不会被传输给我们或任何第三方，仅保存在你的设备本地（如适用，可能通过你的个人 iCloud 账户同步）。</p>
+            </div>
+
+            <div class="section">
+                <h2>第三方服务</h2>
+                <p>我们仅使用以下服务，均具备符合行业标准的安全保护措施：</p>
+                <ul>
+                    <li>
+                        <strong>Apple App Store</strong>：用于应用下载与购买。
+                        隐私政策请参阅 <a href="https://www.apple.com/privacy/" target="_blank" rel="noopener">Apple 隐私政策</a>。
+                    </li>
+                    <li>
+                        <strong>iCloud</strong>：用于数据同步与备份。
+                        隐私政策请参阅 <a href="https://www.apple.com/privacy/" target="_blank" rel="noopener">Apple 隐私政策</a>。
+                    </li>
+                    <li>
+                        <strong>GitHub Pages</strong>：用于托管本隐私政策与支持页面。
+                        隐私政策请参阅 <a href="https://docs.github.com/en/github/site-policy/github-privacy-statement" target="_blank" rel="noopener">GitHub 隐私声明</a>。
+                    </li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>数据存储与安全</h2>
+                <ul>
+                    <li><strong>本地存储：</strong>所有核心数据仅保存在您的设备本地，我们没有任何服务器集中存储您的个人数据。</li>
+                    <li><strong>iCloud 同步：</strong>若您开启 iCloud 同步，数据将加密存储在您的个人 iCloud 账户中，并由 Apple 负责管理，我们无法直接访问。</li>
+                    <li><strong>邮件通信：</strong>您与我们之间的邮件往来会安全地保存在我们的邮箱系统中，并仅供内部支持团队访问。</li>
+                    <li><strong>安全建议：</strong>我们建议您为 Apple ID 开启双重认证，以进一步保护您的 iCloud 数据。</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>您的权利</h2>
+                <p>
+                    由于我们的应用采用 <strong>本地存储 + 您个人的 iCloud 账户同步</strong> 设计，
+                    您对自身数据拥有直接的控制权。您可以通过应用内操作或设备系统设置，自主行使以下权利：
+                </p>
+                <ul>
+                    <li><strong>访问与查看：</strong>您可以在应用内随时查看所有数据，无需向我们发出请求。</li>
+                    <li><strong>更正：</strong>您可以在应用内直接修改或更新您的信息。</li>
+                    <li><strong>删除：</strong>您可以在应用内删除任意数据，或通过卸载应用、关闭 iCloud 同步来彻底清除数据。</li>
+                    <li><strong>限制处理：</strong>您可以通过关闭 iCloud 同步、禁用备份等功能，自行限制数据的处理方式。</li>
+                    <li><strong>数据导出（可携权）：</strong>如需结构化、机器可读格式的数据副本，您可以使用应用内提供的导出功能（如有），或通过设备备份功能自行生成。</li>
+                    <li><strong>撤回同意：</strong>对于需要您授权才能开启的功能（如 iCloud 同步），您可以随时在应用设置或系统设置中撤回授权。</li>
+                </ul>
+                <p>
+                    同时，如果您通过电子邮件联系我们，我们收到的您的联系方式及邮件往来内容，将由我们作为数据处理者保存。
+                    针对这部分数据，您同样享有 <strong>访问、更正、删除、限制处理、数据可携及撤回同意</strong> 的权利。
+                    您可以通过 <a href="mailto:contact@focusbill.app">contact@focusbill.app</a> 联系我们行使上述权利，
+                    我们将在 30 天内回复处理结果。
+                </p>
+
+                <h3>欧盟/欧洲经济区用户的额外权利（GDPR）</h3>
+                <div class="gdpr-box">
+                    <p>如果您位于欧盟或欧洲经济区，《通用数据保护条例》（GDPR）赋予您有关个人数据的额外权利，包括向您所在地的数据保护监管机构投诉的权利。由于 FocusBill 仅将您的核心应用数据存储在您的设备本地，以及（如您选择开启）您个人的 iCloud 账户中，我们作为公司实际持有的个人数据，仅限于您通过邮件主动发送给我们的内容。针对这部分数据：</p>
+                    <ul>
+                        <li><strong>处理的法律依据：</strong>我们基于您的同意，以及回复您咨询的正当利益，处理您发送给我们的邮件及相关信息。</li>
+                        <li><strong>投诉权：</strong>如果您认为您的数据被不当处理，您可以向您所在国家/地区的数据保护监管机构提出投诉。</li>
+                        <li><strong>数据保留期限：</strong>我们仅在处理您咨询所需的期限内保留邮件往来内容，处理完成后会在合理期限内删除。</li>
+                        <li><strong>不存在自动化决策：</strong>我们不会将您的数据用于自动化决策或用户画像分析。</li>
+                        <li><strong>跨境传输：</strong>我们使用的邮件服务提供商可能在欧盟/欧洲经济区以外处理数据；如涉及此类情况，将依据适用法律要求采取相应的保护措施。</li>
+                    </ul>
+                    <p>如需行使上述任何权利，请通过 <a href="mailto:contact@focusbill.app">contact@focusbill.app</a> 联系我们。</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>联系方式</h2>
+                <div class="contact-box">
+                    <p>欢迎随时联系我们：</p>
+                    <a class="email" href="mailto:contact@focusbill.app">contact@focusbill.app</a>
+                    <p>我们通常会在 1~2 个工作日内回复您的邮件。</p>
+                </div>
+            </div>
+
+            <div class="footer">
+                © 2026 FocusBill · 专注与自我奖励
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        function setLanguage(lang) {
+            var contentEn = document.getElementById('content-en');
+            var contentZh = document.getElementById('content-zh');
+            var btnEn = document.getElementById('btn-en');
+            var btnZh = document.getElementById('btn-zh');
+
+            if (lang === 'zh') {
+                contentEn.style.display = 'none';
+                contentZh.style.display = 'block';
+                btnEn.classList.remove('active');
+                btnZh.classList.add('active');
+                document.documentElement.lang = 'zh-CN';
+                document.title = 'FocusBill — 隐私政策';
+            } else {
+                contentEn.style.display = 'block';
+                contentZh.style.display = 'none';
+                btnZh.classList.remove('active');
+                btnEn.classList.add('active');
+                document.documentElement.lang = 'en';
+                document.title = 'FocusBill — Privacy Policy';
+            }
+        }
+    </script>
+
+</body>
+</html>
