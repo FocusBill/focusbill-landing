@@ -68,6 +68,19 @@
             gap: 8px;
         }
 
+        .nav-brand {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .nav-icon {
+            width: 28px;
+            height: 28px;
+            border-radius: 6px; /* 应用图标常见的圆角风格，可选 */
+            display: block;
+        }
+
         .nav-links a {
             color: #4b5563;
             text-decoration: none;
@@ -458,7 +471,10 @@
         <!-- ========== English ========== -->
         <div id="content-en">
             <nav class="nav">
-                <a class="nav-brand" href="/">FocusBill</a>
+                <a class="nav-brand" href="/">
+                    <img src="images/app-icon.png" alt="FocusBill" class="nav-icon">
+                    FocusBill
+                </a>
                 <div class="nav-links">
                     <a href="/support">Support</a>
                     <a href="/privacy-policy">Privacy</a>
@@ -546,7 +562,10 @@
         <!-- ========== Chinese ========== -->
         <div id="content-zh">
             <nav class="nav">
-                <a class="nav-brand" href="/">FocusBill</a>
+                <a class="nav-brand" href="/">
+                    <img src="images/app-icon.png" alt="FocusBill" class="nav-icon">
+                    FocusBill
+                </a>
                 <div class="nav-links">
                     <a href="/support">帮助</a>
                     <a href="/privacy-policy">隐私</a>
