@@ -158,55 +158,33 @@
             line-height: 1.6;
         }
 
-        /* showcase images */
+        /* showcase images — two large screenshots */
         .showcase {
-            display: flex;
-            justify-content: center;
-            align-items: flex-end;
-            gap: 16px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
             padding: 20px 0 48px;
-            flex-wrap: wrap;
+            max-width: 100%;
         }
 
-        .phone {
-            width: min(220px, 42vw);
-            aspect-ratio: 9 / 19.5;
-            background: #fff;
-            border-radius: 28px;
-            box-shadow:
-                0 0 0 1px rgba(0, 0, 0, 0.06),
-                0 25px 50px -12px rgba(15, 23, 42, 0.18);
-            overflow: hidden;
-            position: relative;
+        .shot {
+            width: 100%;
+            aspect-ratio: 3854 / 2493;
         }
 
-        .phone.main {
-            width: min(260px, 48vw);
-            transform: translateY(-12px);
-            box-shadow:
-                0 0 0 1px rgba(0, 0, 0, 0.08),
-                0 32px 64px -16px rgba(15, 23, 42, 0.22);
-        }
-
-        .phone-inner {
+        .shot img {
             width: 100%;
             height: 100%;
-            background: linear-gradient(180deg, #f1f5f9 0%, #e2e8f0 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #94a3b8;
-            font-size: 13px;
-            font-weight: 500;
-            text-align: center;
-            padding: 16px;
-        }
-
-        .phone-inner img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+            object-fit: contain;
             display: block;
+        }
+
+        @media (max-width: 700px) {
+            .showcase {
+                grid-template-columns: 1fr;
+                gap: 16px;
+                padding-bottom: 36px;
+            }
         }
 
         /* try it out */
@@ -321,6 +299,132 @@
             line-height: 1.6;
             margin: 0;
         }
+        /* email signup */
+        .email-signup {
+            text-align: center;
+            padding: 48px 20px 24px;
+            max-width: 520px;
+            margin: 0 auto;
+        }
+
+        .email-signup h2 {
+            font-size: 24px;
+            font-weight: 750;
+            letter-spacing: -0.03em;
+            color: #0f172a;
+            margin-bottom: 10px;
+        }
+
+        .email-signup p {
+            font-size: 15px;
+            color: #64748b;
+            margin-bottom: 24px;
+            line-height: 1.5;
+        }
+
+        .email-form {
+            display: flex;
+            gap: 10px;
+            max-width: 420px;
+            margin: 0 auto;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .email-form input[type="email"] {
+            flex: 1;
+            min-width: 200px;
+            padding: 14px 18px;
+            font-size: 15px;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.85);
+            color: #0f172a;
+            outline: none;
+            transition: border-color 0.2s, box-shadow 0.2s;
+            font-family: inherit;
+        }
+
+        .email-form input[type="email"]::placeholder {
+            color: #94a3b8;
+        }
+
+        .email-form input[type="email"]:focus {
+            border-color: #111827;
+            box-shadow: 0 0 0 3px rgba(17, 24, 39, 0.1);
+        }
+
+        .email-form button {
+            padding: 14px 28px;
+            font-size: 15px;
+            font-weight: 600;
+            color: #fff;
+            background: #111827;
+            border: none;
+            border-radius: 999px;
+            cursor: pointer;
+            transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+            font-family: inherit;
+            white-space: nowrap;
+        }
+
+        .email-form button:hover {
+            background: #000;
+            transform: translateY(-1px);
+            box-shadow: 0 8px 20px -6px rgba(17, 24, 39, 0.4);
+        }
+
+        .email-form button:active {
+            transform: translateY(0);
+        }
+
+        .email-note {
+            margin-top: 14px;
+            font-size: 12px;
+            color: #94a3b8;
+        }
+
+        /* contact */
+        .contact {
+            text-align: center;
+            padding: 40px 20px 8px;
+            max-width: 520px;
+            margin: 0 auto;
+        }
+
+        .contact h2 {
+            font-size: 24px;
+            font-weight: 750;
+            letter-spacing: -0.03em;
+            color: #0f172a;
+            margin-bottom: 10px;
+        }
+
+        .contact p {
+            font-size: 15px;
+            color: #64748b;
+            margin-bottom: 16px;
+            line-height: 1.5;
+        }
+
+        .contact a.contact-email {
+            display: inline-block;
+            font-size: 16px;
+            font-weight: 600;
+            color: #111827;
+            text-decoration: none;
+            background: rgba(255, 255, 255, 0.75);
+            border: 1px solid rgba(0, 0, 0, 0.08);
+            padding: 12px 24px;
+            border-radius: 999px;
+            transition: background 0.2s, box-shadow 0.2s, transform 0.2s;
+        }
+
+        .contact a.contact-email:hover {
+            background: #fff;
+            box-shadow: 0 8px 24px -8px rgba(15, 23, 42, 0.15);
+            transform: translateY(-1px);
+        }
 
         /* footer */
         .footer {
@@ -371,23 +475,11 @@
             </header>
 
             <section class="showcase" aria-label="App screenshots">
-                <div class="phone side">
-                    <div class="phone-inner">
-                        <!-- <img src="images/store.png" alt="Life Store"> -->
-                        Life Store
-                    </div>
+                <div class="shot">
+                    <img src="images/screenshot-1-en.png" width="3854" height="2493" alt="FocusBill app screenshot 1">
                 </div>
-                <div class="phone main">
-                    <div class="phone-inner">
-                        <!-- <img src="images/focus.png" alt="Focus Timer"> -->
-                        Focus Timer<br><span style="font-size:12px;opacity:.8">Replace with real screenshot</span>
-                    </div>
-                </div>
-                <div class="phone side">
-                    <div class="phone-inner">
-                        <!-- <img src="images/bill.png" alt="Focus Bill"> -->
-                        Focus Bill
-                    </div>
+                <div class="shot">
+                    <img src="images/screenshot-2-en.png" width="3854" height="2493" alt="FocusBill app screenshot 2">
                 </div>
             </section>
 
@@ -426,6 +518,22 @@
                 </div>
             </section>
 
+            <!-- <section class="email-signup">
+                <h2>Stay in the loop</h2>
+                <p>Enter your email to get the latest updates and news.</p>
+                <form class="email-form" onsubmit="handleEmailSubmit(event)">
+                    <input type="email" name="email" placeholder="you@example.com" required autocomplete="email">
+                    <button type="submit">Subscribe</button>
+                </form>
+                <p class="email-note">No spam. Unsubscribe anytime.</p>
+            </section> -->
+
+            <section class="contact">
+                <h2>Contact us</h2>
+                <p>Have a question or feedback? We’d love to hear from you.</p>
+                <a class="contact-email" href="mailto:contact@focusbill.app">contact@focusbill.app</a>
+            </section>
+
             <footer class="footer">
                 <div>
                     <a href="/support">Help &amp; Support</a>
@@ -455,16 +563,11 @@
             </header>
 
             <section class="showcase" aria-label="应用截图">
-                <div class="phone side">
-                    <div class="phone-inner">人生商店</div>
+                <div class="shot">
+                    <img src="images/screenshot-1-zh.png" width="3854" height="2493" alt="FocusBill 应用截图 1">
                 </div>
-                <div class="phone main">
-                    <div class="phone-inner">
-                        专注计时<br><span style="font-size:12px;opacity:.8">替换为真实截图</span>
-                    </div>
-                </div>
-                <div class="phone side">
-                    <div class="phone-inner">专注账单</div>
+                <div class="shot">
+                    <img src="images/screenshot-2-zh.png" width="3854" height="2493" alt="FocusBill 应用截图 2">
                 </div>
             </section>
 
@@ -502,6 +605,22 @@
                 </div>
             </section>
 
+            <!-- <section class="email-signup">
+                <h2>获取最新消息</h2>
+                <p>输入邮箱，接收产品更新与最新动态。</p>
+                <form class="email-form" onsubmit="handleEmailSubmit(event)">
+                    <input type="email" name="email" placeholder="you@example.com" required autocomplete="email">
+                    <button type="submit">订阅</button>
+                </form>
+                <p class="email-note">不会发送垃圾邮件，可随时取消订阅。</p>
+            </section> -->
+
+            <section class="contact">
+                <h2>联系我们</h2>
+                <p>有任何问题或反馈，欢迎随时联系。</p>
+                <a class="contact-email" href="mailto:contact@focusbill.app">contact@focusbill.app</a>
+            </section>
+
             <footer class="footer">
                 <div>
                     <a href="/support">帮助与支持</a>
@@ -527,6 +646,17 @@
                 document.documentElement.lang = 'en';
                 document.title = 'FocusBill — Focus & Self-Reward';
             }
+        }
+        function handleEmailSubmit(e) {
+            e.preventDefault();
+            var form = e.target;
+            var email = form.querySelector('input[type="email"]').value.trim();
+            if (!email) return;
+            // Placeholder: replace with your backend / newsletter service endpoint
+            alert(document.documentElement.lang === 'zh-CN'
+                ? '感谢订阅！我们会把最新消息发送到 ' + email
+                : 'Thanks for subscribing! We will send updates to ' + email);
+            form.reset();
         }
     </script>
 </body>
