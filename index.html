@@ -441,16 +441,21 @@
 
         /* footer */
         .footer {
-            text-align: center;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 12px;
             padding-top: 48px;
             font-size: 13px;
             color: #94a3b8;
+            text-align: left;
         }
 
         .footer a {
             color: #64748b;
             text-decoration: none;
-            margin: 0 10px;
+            margin: 0 10px 0 0;
         }
 
         .footer a:hover {
@@ -458,11 +463,14 @@
         }
 
         .footer .sep {
-            margin: 12px 0;
+            margin: 0;
         }
 
-        #content-zh {
-            display: none;
+        @media (max-width: 500px) {
+            .footer {
+                flex-direction: column;
+                text-align: center;
+            }
         }
     </style>
     
@@ -559,11 +567,11 @@
             </section>
 
             <footer class="footer">
+                <div class="sep">© 2026 FocusBill · Focus &amp; Self-Reward</div>
                 <div>
                     <a href="/support">Help &amp; Support</a>
                     <a href="/privacy-policy">Privacy Policy</a>
                 </div>
-                <div class="sep">© 2026 FocusBill · Focus &amp; Self-Reward</div>
             </footer>
         </div>
 
@@ -649,11 +657,11 @@
             </section>
 
             <footer class="footer">
+                <div class="sep">© 2026 FocusBill · 专注与自我奖励</div>
                 <div>
                     <a href="/support">帮助与支持</a>
                     <a href="/privacy-policy">隐私政策</a>
                 </div>
-                <div class="sep">© 2026 FocusBill · 专注与自我奖励</div>
             </footer>
         </div>
     </div>
